@@ -2,7 +2,7 @@
 Angular 1.6.3, SCSS, Gulp, Bower
 
 
-###Commands to setup on local machine:
+Commands to setup on local machine:
 Node version should be
 v11.10.0
 
