@@ -1,0 +1,22 @@
+{
+  "name": "angular-stopwatch",
+  "version": "1.0.0",
+  "description": "Angular stopwatch",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-sass": "^3.1.0",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

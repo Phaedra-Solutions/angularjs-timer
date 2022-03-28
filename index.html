@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular Stopwatch</title>
+    <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./dist/css/main.css">
+
+    <!-- <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="./bower_components/moment/moment.js"></script>
+    <script src="./bower_components/angular-moment/angular-moment.js"></script>
+
+    <script src="./public/app/app.js"></script>
+  </head>
+  <body>
+    <div class="main" ng-controller="MainCtrl as vm">
+      <div class="wrapper">
+        <div id="clock" class="clock-green">
+          <div class="display">
+            <div class="digits" ng-bind-html="vm.displayTime | ledFormat">
+            </div>
+          </div>
+          <div class="actions">
+            <a href="#" class="playbtn" ng-if="!vm.playState" ng-click="vm.startTimer()">
+              <span class="play-action"><i class="fas fa-play"></i> Play</span>
+            </a>
+            <a href="#" class="pausebtn" ng-if="vm.playState" ng-click="vm.stopTimer()">
+              <span class="pause-action"><i class="fas fa-pause"></i> Pause</span>
+            </a>
+            <a href="#" class="watch" ng-click="vm.captureLap()">
+              <i class="far fa-stopwatch"></i>
+            </a>
+            <a href="#" class="delete" ng-click="vm.resetApp()">
+              <i class="fal fa-trash-alt"></i>
+            </a>
+          </div>
+        </div>
+        <ul class="clock-list clock-white">
+          <li ng-repeat="(key, timer) in vm.timers track by key">
+            <div class="digits small-digits" ng-bind-html="timer | ledFormat">
+            </div>
+            <a href="#" class="remove" ng-click="vm.removeTimer(key)">Remove</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script type="text/javascript">
+
+    </script>
+  </body>
+</html>
